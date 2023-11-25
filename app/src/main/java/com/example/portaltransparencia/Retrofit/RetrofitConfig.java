@@ -1,5 +1,7 @@
 package com.example.portaltransparencia.Retrofit;
 
+import com.example.portaltransparencia.service.ApiDeputado;
+
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class RetrofitConfig {
@@ -11,5 +13,16 @@ public class RetrofitConfig {
             .baseUrl(BASE_URL_API)
             .addConverterFactory(JacksonConverterFactory.create())
             .build();
+
+
+
+
+
+    public ApiDeputado getDeputados (){
+        return this.retrofit.create(ApiDeputado.class);
+    }
+
+
+
 
 }
