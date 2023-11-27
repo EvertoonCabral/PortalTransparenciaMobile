@@ -45,36 +45,37 @@ public class TelaBusarDeputado extends AppCompatActivity {
             Log.d("TelaBusarDeputado", "Parâmetros - Nome: " + nomeDeputado + ", Partido: " + nomePartido + ", UF: " + siglaUF);
             buscarDeputados(nomeDeputado, nomePartido, siglaUF);
         });
-
-
     }
 
 
     private void buscarDeputados(String nomeDeputado, String nomePartido,  String siglaUF) {
         String urlChamada = apiDeputado.getDeputados(nomeDeputado, nomePartido, siglaUF).request().url().toString();
         Log.d("TelaBusarDeputado", "URL da chamada: " + urlChamada);
+
+
         apiDeputado.getDeputados(nomeDeputado, nomePartido, siglaUF).enqueue(new Callback<RespostaDeputadosDTO>() {
             @Override
             public void onResponse(Call<RespostaDeputadosDTO> call, Response<RespostaDeputadosDTO> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    Log.d("TelaBusarDeputado", "Resposta recebida com sucesso");
                     atualizarListaDeputados(response.body().getDados());
+                //    atualizarTextViewComResposta(response.body().toString());
                 } else {
-                    Log.e("TelaBusarDeputado", "Resposta não bem-sucedida");
+                  //  atualizarTextViewComResposta("Falha na resposta: " + response.code());
                 }
             }
 
             @Override
             public void onFailure(Call<RespostaDeputadosDTO> call, Throwable t) {
-                Log.e("TelaBusarDeputado", "Falha na chamada da API", t);
+                atualizarTextViewComResposta("Erro na chamada da API: " + t.getMessage());
+                Log.e("TelaBuscDeputado:", "Erro na chamada da API: " + t.getMessage());
             }
+
         });
     }
 
 
 
     private void atualizarListaDeputados(List<DeputadoDTO> listaDeputados) {
-        Log.d("TelaBusarDeputado", "Atualizando lista de deputados");
         DeputadoAdapter adapter = (DeputadoAdapter) binding.listaDeputados.getAdapter();
         if (adapter != null) {
             adapter.setDeputados(listaDeputados);
@@ -82,6 +83,11 @@ public class TelaBusarDeputado extends AppCompatActivity {
         } else {
             Log.e("TelaBusarDeputado", "Adapter é null");
         }
+    }
+
+
+    private void atualizarTextViewComResposta(String resposta) {
+        binding.tvApiResponse.setText(resposta);
     }
 
 

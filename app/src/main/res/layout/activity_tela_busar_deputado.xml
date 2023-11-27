@@ -54,6 +54,14 @@
         android:layout_marginVertical="40dp"
         >
 
+        <EditText
+            android:id="@+id/idDeputadoGastos"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="informo o ID do Deputado para ver os gastos!"
+            android:layout_margin="20dp"
+            />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaDeputados"
             android:layout_width="match_parent"

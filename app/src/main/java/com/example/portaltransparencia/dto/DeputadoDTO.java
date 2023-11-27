@@ -2,54 +2,66 @@ package com.example.portaltransparencia.dto;
 
 public class DeputadoDTO {
 
-    private String email;
-    private long id;
-    private int idLegislatura;
+
+    private String id;
+
+    private String uri;
     private String nome;
     private String siglaPartido;
     private String siglaUf;
-    private String uri;
-    private String uriPartido;
+    private String idLegislatura;
+
     private String urlFoto;
+    private String email;
+
+    private String uriPartido;
 
 
     public DeputadoDTO() {
     }
 
-    public DeputadoDTO(String email, long id, int idLegislatura, String nome, String siglaPartido, String siglaUf, String uri, String uriPartido, String urlFoto) {
-        this.email = email;
+    public DeputadoDTO(String id, String uri, String nome, String siglaPartido, String siglaUf, String idLegislatura, String urlFoto, String email, String uriPartido) {
         this.id = id;
-        this.idLegislatura = idLegislatura;
+        this.uri = uri;
         this.nome = nome;
         this.siglaPartido = siglaPartido;
         this.siglaUf = siglaUf;
-        this.uri = uri;
-        this.uriPartido = uriPartido;
+        this.idLegislatura = idLegislatura;
         this.urlFoto = urlFoto;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
+        this.uriPartido = uriPartido;
     }
 
-    public long getId() {
-        return id;
+    public String getUri() {
+        return uri;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
-    public int getIdLegislatura() {
+    public String getIdLegislatura() {
         return idLegislatura;
     }
 
-    public void setIdLegislatura(int idLegislatura) {
+    public void setIdLegislatura(String idLegislatura) {
         this.idLegislatura = idLegislatura;
+    }
+
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -76,12 +88,12 @@ public class DeputadoDTO {
         this.siglaUf = siglaUf;
     }
 
-    public String getUri() {
-        return uri;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUri(String uri) {
-        this.uri = uri;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUriPartido() {
@@ -92,11 +104,18 @@ public class DeputadoDTO {
         this.uriPartido = uriPartido;
     }
 
-    public String getUrlFoto() {
-        return urlFoto;
-    }
-
-    public void setUrlFoto(String urlFoto) {
-        this.urlFoto = urlFoto;
+    @Override
+    public String toString() {
+        return "DeputadoDTO{" +
+                "id='" + id + '\'' +
+                ", uri='" + uri + '\'' +
+                ", nome='" + nome + '\'' +
+                ", siglaPartido='" + siglaPartido + '\'' +
+                ", siglaUf='" + siglaUf + '\'' +
+                ", idLegislatura='" + idLegislatura + '\'' +
+                ", urlFoto='" + urlFoto + '\'' +
+                ", email='" + email + '\'' +
+                ", uriPartido='" + uriPartido + '\'' +
+                '}';
     }
 }
