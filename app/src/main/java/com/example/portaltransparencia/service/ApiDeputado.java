@@ -20,9 +20,9 @@ public interface ApiDeputado {
 
 
     @GET("deputados/{id}")
-    Call<RespondeGastosDeputadoDTO> getDetalhesDeputado(@Path("id") long id);
+    Call<RespondeGastosDeputadoDTO> getGastosDeputado(@Path("id") long id);
 
-
+/*
     @GET("deputados/{id}/despesas")
     Call<List<DespesaDTO>> getDespesasDeputado(@Path("id") long id);
 

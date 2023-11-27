@@ -22,6 +22,11 @@ public class RetrofitConfig {
         return this.retrofit.create(ApiDeputado.class);
     }
 
+    public ApiDeputado getGastosDeputado (){
+        return this.retrofit.create(ApiDeputado.class);
+    }
+
+
 
 
 
