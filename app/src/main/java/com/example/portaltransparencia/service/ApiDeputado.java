@@ -19,7 +19,7 @@ public interface ApiDeputado {
                                                 @Query("siglaUf") String siglaUf);
 
 
-    @GET("deputados/{id}")
+    @GET("deputados/{id}/despesas")
     Call<RespondeGastosDeputadoDTO> getGastosDeputado(@Path("id") long id);
 
 /*
