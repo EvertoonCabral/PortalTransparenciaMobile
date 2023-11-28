@@ -22,4 +22,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, TelaBusarDeputado.class);
         startActivity(intent);
     }
+
+
+    private void abrirTelaPartido() {
+        Intent intent = new Intent(this, TelaBuscarPartido.class);
+        startActivity(intent);
+    }
+
 }

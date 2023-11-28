@@ -134,8 +134,10 @@ public class TelaBusarDeputado extends AppCompatActivity {
         for (GastosDeputadosDTO gasto : gastos) {
             // Formatar e adicionar cada gasto ao StringBuilder
             gastosTexto.append("Ano: ").append(gasto.getAno())
+                    .append("\nDespesa:: ").append(gasto.getTipoDespesa())
                     .append("\nValor: ").append(gasto.getValorDocumento())
                     .append("\nFornecedor: ").append(gasto.getNomeFornecedor())
+                    .append("\nDespesa:: ").append(gasto.getTipoDespesa())
                     .append("\n\n");
         }
 

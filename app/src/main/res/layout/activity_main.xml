@@ -18,4 +18,14 @@
         />
 
 
+    <Button
+        android:id="@+id/btnBuscarPartidos"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:text="Busque informaçoes Sobre o Partido! "
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        />
+
+
 </LinearLayout>
