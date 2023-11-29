@@ -5,24 +5,16 @@ import java.util.List;
 public class PartidosResponseDTO {
 
 
+    private List<LinkPartidoDTO> links;
+
     private List<PartidoDTO> dados;
+
 
     public List<PartidoDTO> getDados() {
         return dados;
     }
 
-
-    public PartidosResponseDTO(List<PartidoDTO> dados) {
-        this.dados = dados;
+    public List<LinkPartidoDTO> getLinks() {
+        return links;
     }
-
-    public PartidosResponseDTO() {
-    }
-
-    public void setDados(List<PartidoDTO> dados) {
-        this.dados = dados;
-    }
-
-
-
 }

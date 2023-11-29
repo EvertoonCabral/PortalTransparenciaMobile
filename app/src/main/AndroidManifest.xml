@@ -18,9 +18,6 @@
             android:name=".ui.TelaBuscarPartidos"
             android:exported="false" />
         <activity
-            android:name=".ui.TelaBuscarPartido"
-            android:exported="false" />
-        <activity
             android:name=".ui.TelaBusarDeputado"
             android:exported="false" />
         <activity

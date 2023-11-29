@@ -27,7 +27,7 @@ public class RetrofitConfig {
         return retrofit.create(ApiDeputado.class);
     }
 
-    public static ApiPartido getPartidos (){return  retrofit.create(ApiPartido.class);}
+    public static ApiPartido GET_PARTIDOS(){return  retrofit.create(ApiPartido.class);}
 
 
 

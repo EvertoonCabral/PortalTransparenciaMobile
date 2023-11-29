@@ -16,7 +16,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.btnBuscarDeputados.setOnClickListener(v -> abrirTelaDeputado());
+
+        binding.btnBuscarPartidos.setOnClickListener(v ->abrirTelaPartido());
+
     }
+
 
     private void abrirTelaDeputado() {
         Intent intent = new Intent(this, TelaBusarDeputado.class);
@@ -25,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void abrirTelaPartido() {
-        Intent intent = new Intent(this, TelaBuscarPartido.class);
+        Intent intent = new Intent(this, TelaBuscarPartidos.class);
         startActivity(intent);
     }
 

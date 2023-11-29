@@ -6,7 +6,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.portaltransparencia.databinding.ItemGastosDeputadoBinding;
+import com.example.portaltransparencia.databinding.ItemPartidoBinding;
 import com.example.portaltransparencia.dto.GastosDeputadosDTO;
+import com.example.portaltransparencia.dto.PartidoDTO;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,5 +67,47 @@ public class GastosDeputadoAdapter extends RecyclerView.Adapter<GastosDeputadoAd
             Log.d(TAG, "Lista de gastos limpa");
         }
         notifyDataSetChanged();
+    }
+
+    public static class PartidoAdapter extends RecyclerView.Adapter<PartidoAdapter.PartidoViewHolder> {
+
+        private List<PartidoDTO> partidos;
+
+        public PartidoAdapter(List<PartidoDTO> partidos) {
+            this.partidos = partidos;
+        }
+
+        @Override
+        public PartidoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+            ItemPartidoBinding itemBinding = ItemPartidoBinding.inflate(layoutInflater, parent, false);
+            return new PartidoViewHolder(itemBinding);
+        }
+
+        @Override
+        public void onBindViewHolder(PartidoViewHolder holder, int position) {
+            PartidoDTO partido = partidos.get(position);
+            holder.bind(partido);
+        }
+
+        @Override
+        public int getItemCount() {
+            return partidos.size();
+        }
+
+        public static class PartidoViewHolder extends RecyclerView.ViewHolder {
+            private ItemPartidoBinding binding;
+
+            public PartidoViewHolder(ItemPartidoBinding binding) {
+                super(binding.getRoot());
+                this.binding = binding;
+            }
+
+            public void bind(PartidoDTO partido) {
+                binding.tvId.setText(String.valueOf(partido.getId()));
+                binding.tvNome.setText(partido.getNome());
+                binding.tvsigla.setText(partido.getSigla());
+            }
+        }
     }
 }

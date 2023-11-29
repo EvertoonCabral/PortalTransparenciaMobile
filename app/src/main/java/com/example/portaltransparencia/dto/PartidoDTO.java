@@ -50,4 +50,18 @@ public class PartidoDTO {
     }
 
 
+        // ... seus campos e métodos existentes ...
+
+        @Override
+        public String toString() {
+            return "PartidoDTO{" +
+                    "id=" + id +
+                    ", sigla='" + sigla + '\'' +
+                    ", nome='" + nome + '\'' +
+                    ", uri='" + uri + '\'' +
+                    '}';
+
+        }
+
+
 }

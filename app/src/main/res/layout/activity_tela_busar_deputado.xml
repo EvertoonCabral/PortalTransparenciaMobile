@@ -64,6 +64,8 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:backgroundTint="@color/azulzinho"
+
                 android:text="Buscar" />
 
             <!-- TextView para título dos gastos -->
@@ -92,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="15dp"
+                android:backgroundTint="@color/azulzinho"
                 android:text="Quanto seu deputado gasta?" />
 
             <!-- TextView para exibir os gastos -->
