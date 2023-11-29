@@ -1,6 +1,7 @@
 package com.example.portaltransparencia.Retrofit;
 
 import com.example.portaltransparencia.service.ApiDeputado;
+import com.example.portaltransparencia.service.ApiPartido;
 
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
@@ -18,13 +19,19 @@ public class RetrofitConfig {
 
 
 
-    public ApiDeputado getDeputados (){
-        return this.retrofit.create(ApiDeputado.class);
+    public static ApiDeputado getDeputados (){
+        return retrofit.create(ApiDeputado.class);
     }
 
-    public ApiDeputado getGastosDeputado (){
-        return this.retrofit.create(ApiDeputado.class);
+    public static ApiDeputado getGastosDeputado (){
+        return retrofit.create(ApiDeputado.class);
     }
+
+    public static ApiPartido getPartidos (){return  retrofit.create(ApiPartido.class);}
+
+
+
+
 
 
 

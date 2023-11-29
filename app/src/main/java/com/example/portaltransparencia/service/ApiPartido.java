@@ -9,5 +9,5 @@ import retrofit2.http.Query;
 public interface ApiPartido {
 
     @GET("partidos")
-    Call<PartidosResponseDTO> obterPartidos(@Query("sigla") String siglaPartido);
+    Call<PartidosResponseDTO> getPartidos (@Query("sigla") String siglaPartido);
 }
